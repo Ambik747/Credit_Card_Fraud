@@ -174,7 +174,7 @@ This project has a solid foundation, but there's always more to explore:
 
 ## About Me
 
-Hi, I'm **Ambik Mitra** — a data enthusiast who loves turning messy real-world data into meaningful insights.
+Hi, I'm **Ambik Mitra** , a data enthusiast who loves turning messy real-world data into meaningful insights.
 Feel free to connect or check out my other projects!
 
 [GitHub](https://github.com/Ambik747)
