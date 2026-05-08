@@ -9,9 +9,9 @@
 
 ## What's This Project About?
 
-Ever wondered how your bank knows when your card is being used fraudulently — even before you do?
+Ever wondered how your bank knows when your card is being used fraudulently , even before you do?
 
-This project tries to answer exactly that. I built a machine learning pipeline that looks at real-world credit card transaction data and learns to spot the ones that look suspicious. It's not just about training a model — it's about understanding *why* fraud happens, *when* it tends to occur, and *how* to catch it reliably despite the fact that fraudulent transactions are incredibly rare (less than 1% of all transactions).
+This project tries to answer exactly that. I built a machine learning pipeline that looks at real-world credit card transaction data and learns to spot the ones that look suspicious. It's not just about training a model , it's about understanding *why* fraud happens, *when* it tends to occur, and *how* to catch it reliably despite the fact that fraudulent transactions are incredibly rare (less than 1% of all transactions).
 
 The dataset has **339,607 transactions**, out of which only about **1,770 are fraud (~0.52%)**. That tiny fraction is what makes this problem both interesting and tricky.
 
@@ -52,26 +52,26 @@ Before jumping into models, I spent time really *understanding* the data. Here's
 
 ### The Most Interesting Takeaways
 
-- **Online shopping categories** (`shopping_net`, `misc_net`) had the highest fraud rates — not surprising given the rise of card-not-present fraud
-- Fraud happens most often **between midnight and 3 AM** — when people are asleep and less likely to catch it immediately
+- **Online shopping categories** (`shopping_net`, `misc_net`) had the highest fraud rates , not surprising given the rise of card-not-present fraud
+- Fraud happens most often **between midnight and 3 AM** , when people are asleep and less likely to catch it immediately
 - **Transactions made far from the cardholder's location** are much more likely to be fraud (this inspired the Haversine distance feature!)
 - Fraudulent transactions tend to involve **higher-than-average amounts**
 
 ---
 
-## Feature Engineering — Making the Data Smarter
+## Feature Engineering - Making the Data Smarter
 
 Raw data rarely tells the full story. Here's what I added or transformed:
 
 - **Time features** — Extracted `hour`, `day_of_week`, and `month` from the transaction timestamp
 - **Distance** — Calculated the real-world distance (in km) between the cardholder's home and the merchant using the Haversine formula
-- **Cleaned up** irrelevant personal info — columns like name, address, and card number don't help the model and could introduce bias, so I dropped them
+- **Cleaned up** irrelevant personal info , columns like name, address, and card number don't help the model and could introduce bias, so I dropped them
 - **Encoded** categorical columns like `category`, `state`, and `job` into numbers the model can work with
 - **Scaled** all numeric features so no single feature dominates the others
 
 ---
 
-## Modeling — Three Different Approaches
+## Modeling - Three Different Approaches
 
 I trained three models, each handling the class imbalance problem a bit differently:
 
@@ -93,7 +93,7 @@ For Logistic Regression and Random Forest, I also used **SMOTE** — a technique
 | Random Forest | ~0.96 | High | High |
 | Logistic Regression | ~0.88 | Moderate | Moderate |
 
-One important thing I did: **threshold tuning**. By default, most models predict fraud when the probability is above 0.5. But for fraud detection, you often want to be more aggressive — catch more fraud even if it means a few more false alarms. I found the optimal threshold for each model by maximizing the F1-score on the fraud class specifically.
+One important thing I did: **threshold tuning**. By default, most models predict fraud when the probability is above 0.5. But for fraud detection, you often want to be more aggressive , catch more fraud even if it means a few more false alarms. I found the optimal threshold for each model by maximizing the F1-score on the fraud class specifically.
 
 ---
 
