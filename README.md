@@ -31,11 +31,11 @@ credit-card-fraud-detection/
 ```
 
 > The dataset isn't included here because of its size.
-> You can grab it from [Kaggle](https://www.kaggle.com/datasets/kartik2112/fraud-detection) — just download and drop it in the project folder as `credit_card_fraud.csv`.
+> You can grab it from [Kaggle](https://www.kaggle.com/datasets/kartik2112/fraud-detection) , just download and drop it in the project folder as `credit_card_fraud.csv`.
 
 ---
 
-## Exploratory Data Analysis — What Did I Find?
+## Exploratory Data Analysis : What Did I Find?
 
 Before jumping into models, I spent time really *understanding* the data. Here's a summary of the 8 analyses I ran:
 
@@ -59,7 +59,7 @@ Before jumping into models, I spent time really *understanding* the data. Here's
 
 ---
 
-## Feature Engineering - Making the Data Smarter
+## Feature Engineering : Making the Data Smarter
 
 Raw data rarely tells the full story. Here's what I added or transformed:
 
@@ -71,7 +71,7 @@ Raw data rarely tells the full story. Here's what I added or transformed:
 
 ---
 
-## Modeling - Three Different Approaches
+## Modeling : Three Different Approaches
 
 I trained three models, each handling the class imbalance problem a bit differently:
 
